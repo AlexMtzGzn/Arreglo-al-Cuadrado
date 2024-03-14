@@ -6,10 +6,10 @@
 struct arregloAlCuadrado
 {
     int *arreglo;
-    int par;
-    int impar;
-    int inicioPar;
-    int inicioImpar;
+    int final_hilo_1;
+    int final_hilo_2;
+    int inicio_hilo_1;
+    int inicio_hilo_2;
 };
 
 bool memoriaDinamicaArreglo(int *elementos, struct arregloAlCuadrado *array)
