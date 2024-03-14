@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+struct arregloAlCuadrado
+{
+    int recorrido;
+    int *arreglo;
+};
+
 
 int * memoriaDinamicaArreglo(int *elementos){
 
@@ -17,15 +23,15 @@ void * arregloCuadro(void *arg){
 int main(void){
 
     pthread_t hilo1,hilo2;
-    int elementos, *arreglo; 
+    int elementos; 
 
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i",&elementos);
 
-    if(arreglo = memoriaDinamicaArreglo(&elementos) == NULL){
+   /* if(arreglo = memoriaDinamicaArreglo(&elementos) == NULL){
         perror("Error al asignar memoria en el arreglo");
         return -1;
-    }
+    }*/
 
 
     }
