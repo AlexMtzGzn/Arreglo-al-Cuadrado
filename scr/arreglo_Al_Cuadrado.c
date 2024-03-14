@@ -47,7 +47,7 @@ int main(void)
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i", &elementos);
 
-    memoriaDinamicaArreglo(&elementos,&arreglo);
+    memoriaDinamicaArreglo(&elementos,&*arreglo);
 
     if (arreglo == NULL)
     {
@@ -56,11 +56,11 @@ int main(void)
     }
 
 
-    llenarArreglo(&elementos,&arreglo);
+    llenarArreglo(&elementos,&*arreglo);
 
     printf("\n\nArreglo sin Cuadrado\n\n");
 
-    imprimirArreglo(&elementos,&arreglo);
+    imprimirArreglo(&elementos,&*arreglo);
 
     posiciones->arreglo=arreglo;
 
@@ -101,7 +101,7 @@ int main(void)
 
     printf("\n\nArreglo al Cuadrado\n\n");
 
-    imprimirArreglo(&elementos,&arreglo);
+    imprimirArreglo(&elementos,&*arreglo);
 
     free(arreglo);
 
