@@ -5,8 +5,10 @@
 
 struct arregloAlCuadrado
 {
-    int recorrido;
     int *arreglo;
+    int par;
+    int impar;
+    
 };
 
 
@@ -17,7 +19,7 @@ bool memoriaDinamicaArreglo(int *elementos,struct arregloAlCuadrado *array){
     return array->arreglo==NULL;
 }
 
-void * arregloCuadro(void *arg){
+void * arregloCuadrado(void *arg){
 
 }
 
@@ -36,9 +38,15 @@ int main(void){
         return -1;
     }
 
-
+    if(elementos % 2 == 0)
+        array.par=elementos/2;
+    else{
+        array.par=array.impar=elementos/2;
+        array.impar++;
     }
-    
+
+    pthread_create(&hilo1,NULL,arregloCuadrado,(void *)&array);
+    pthread_create(&hilo2,NULL,arregloCuadrado,(void *)&array);
    
 
 
