@@ -10,6 +10,10 @@ int * memoriaDinamicaArreglo(int *elementos){
     return arreglo;
 }
 
+void * arregloCuadro(void *arg){
+
+}
+
 int main(void){
 
     pthread_t hilo1,hilo2;
@@ -23,7 +27,8 @@ int main(void){
         return -1;
     }
 
-    
+
+    }
     
    
 
