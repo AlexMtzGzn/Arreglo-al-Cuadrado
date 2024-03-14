@@ -81,11 +81,25 @@ int main(void)
         posiciones[1].final = elementos;
     }
 
-    pthread_create(&hilo1, NULL, arregloCuadrado, (void *)&posiciones[0]);
-    pthread_create(&hilo2, NULL, arregloCuadrado, (void *)&posiciones[1]);
+    if(pthread_create(&hilo1, NULL, arregloCuadrado, (void *)&posiciones[0]) != 0){
+        perror("\nError al crear el hilo.");
+        return -1;
+    }
+    
+    if(pthread_create(&hilo2, NULL, arregloCuadrado, (void *)&posiciones[1]) != 0){
+        perror("\nError al crear el hilo.");
+        return -1;
+    }
 
-    pthread_join(hilo1, NULL);
-    pthread_join(hilo2, NULL);
+    if(pthread_join(hilo1, NULL) != 0){
+        perror("\nError al esperar el hilo.");
+        return -1;
+    }
+
+    if(pthread_join(hilo2, NULL) != 0){
+        perror("\nError al crear el hilo.");
+        return -1;
+    }
 
     printf("\n\nArreglo al Cuadrado\n\n");
 
