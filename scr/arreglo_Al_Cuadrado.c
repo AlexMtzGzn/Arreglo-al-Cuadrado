@@ -17,13 +17,13 @@ void memoriaDinamicaArreglo(int *elementos, int **arreglo)
 void imprimirArreglo(int *elementos,int **arreglo){
 
      for(int i = 0; i < *elementos; i++)
-        printf("%i  ",*arreglo[i]);
+        printf("%i  ",(*arreglo)[i]);
 }
 
 void llenarArreglo(int *elementos,int **arreglo){
 
     for(int i = 0; i < *elementos; i++)
-        *arreglo[i] = i+1;
+        (*arreglo)[i] = i+1;
 }
 
 void *arregloCuadrado(void *arg)
@@ -62,7 +62,8 @@ int main(void)
 
     imprimirArreglo(&elementos,&arreglo);
 
-    posiciones->arreglo=arreglo;
+    posiciones[0].arreglo=arreglo;
+    posiciones[1].arreglo=arreglo;
 
     posiciones[0].inicio = 0;
 
