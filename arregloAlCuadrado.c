@@ -85,8 +85,8 @@ int main(void)
     pthread_create(&hilo1, NULL, arregloCuadrado, (void *)&posiciones[0]);
     pthread_create(&hilo2, NULL, arregloCuadrado, (void *)&posiciones[1]);
 
-    pthread_join(&hilo1, NULL);
-    pthread_join(&hilo2, NULL);
+    pthread_join(hilo1, NULL);
+    pthread_join(hilo2, NULL);
 
     printf("\nArreglo al Cuadrado");
 
