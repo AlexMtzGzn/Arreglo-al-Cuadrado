@@ -5,11 +5,8 @@
 
 struct arregloAlCuadrado
 {
-    int *arreglo;
-    int final_hilo_1;
-    int final_hilo_2;
-    int inicio_hilo_1;
-    int inicio_hilo_2;
+   int inicio;
+   int final;
 };
 
 bool memoriaDinamicaArreglo(int *elementos, struct arregloAlCuadrado *array)
@@ -38,7 +35,7 @@ int main(void)
     pthread_t hilo1, hilo2;
     int elementos;
 
-    struct arregloAlCuadrado array;
+    struct arregloAlCuadrado posiciones;
 
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i", &elementos);
@@ -49,13 +46,12 @@ int main(void)
         return -1;
     }
 
-    array.inicioPar=0;
+    array.inicio_hilo_1=0;
 
     if (elementos % 2 == 0)
     {
 
-        array.par = elementos / 2;
-        array.inicioImpar = ;
+        array.final_hilo_1 = array.inicio_hilo_2 = elementos / 2;
     }
     else
     {
