@@ -16,19 +16,19 @@ El programa solicita al usuario que ingrese la cantidad de elementos para el arr
 1. Clona el repositorio:
 
     ```bash
-    
+    git clone https://github.com/AlexMtzGzn/Arreglo_Al_Cuadrado.git
     ```
 
 2. Navega al directorio del proyecto:
 
     ```bash
-    
+    cd Arreglo_Al_Cuadrado/src
     ```
 
 3. Compila el programa:
 
     ```bash
-    
+    gcc arreglo_Al_Cuadrado.c -o arreglo_Al_Cuadrado
     ```
 
 ## Uso
@@ -36,7 +36,7 @@ El programa solicita al usuario que ingrese la cantidad de elementos para el arr
 1. Ejecuta el programa:
 
     ```bash
-    
+    ./arreglo_Al_Cuadrado
     ```
 
 2. Sigue las instrucciones en pantalla para ingresar la cantidad de elementos para el arreglo.
