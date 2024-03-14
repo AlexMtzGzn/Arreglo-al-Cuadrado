@@ -24,7 +24,7 @@ void imprimirArreglo(int *elementos){
 void llenarArreglo(int *elementos){
 
     for(int i = 0; i < *elementos; i++){
-        arreglo[i] = i;
+        arreglo[i] = i+1;
     }
 }
 
