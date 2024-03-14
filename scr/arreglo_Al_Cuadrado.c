@@ -13,19 +13,19 @@ int *arreglo;
 
 void memoriaDinamicaArreglo(int *elementos)
 {
-
     arreglo = (int *)malloc(*elementos * sizeof(int));
 }
+
 void imprimirArreglo(int *elementos){
 
      for(int i = 0; i < *elementos; i++)
         printf("%i  ",arreglo[i]);
 }
+
 void llenarArreglo(int *elementos){
 
-    for(int i = 0; i < *elementos; i++){
+    for(int i = 0; i < *elementos; i++)
         arreglo[i] = i+1;
-    }
 }
 
 void *arregloCuadrado(void *arg)
@@ -33,9 +33,7 @@ void *arregloCuadrado(void *arg)
     struct arregloAlCuadrado *posicion = (struct arregloAlCuadrado *)arg;
 
     for (int i = posicion->inicio; i < posicion->final; i++)
-    {
         arreglo[i] *= arreglo[i];
-    }
 
     pthread_exit(NULL);
 }
