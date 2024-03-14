@@ -105,5 +105,7 @@ int main(void)
 
     imprimirArreglo(&elementos);
 
+    free(arreglo);
+
     return 0;
 }
