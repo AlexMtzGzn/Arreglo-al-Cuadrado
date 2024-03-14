@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <pthread.h>
 
 struct arregloAlCuadrado
@@ -9,11 +10,11 @@ struct arregloAlCuadrado
 };
 
 
-void memoriaDinamicaArreglo(int *elementos,struct arregloAlCuadrado *array){
+bool memoriaDinamicaArreglo(int *elementos,struct arregloAlCuadrado *array){
 
     array->arreglo = (int *) malloc(*elementos*sizeof(int));
-
- 
+    
+    return array->arreglo==NULL;
 }
 
 void * arregloCuadro(void *arg){
@@ -30,10 +31,10 @@ int main(void){
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i",&elementos);
 
-   /* if(arreglo = memoriaDinamicaArreglo(&elementos) == NULL){
+   if(array.arreglo = memoriaDinamicaArreglo(&elementos,&array) == NULL){
         perror("Error al asignar memoria en el arreglo");
         return -1;
-    }*/
+    }
 
 
     }
