@@ -18,9 +18,8 @@ void memoriaDinamicaArreglo(int *elementos)
 }
 void imprimirArreglo(int *elementos){
 
-     for(int i = 0; i < *elementos; i++){
-        printf("\n%i",arreglo[i]);
-    }
+     for(int i = 0; i < *elementos; i++)
+        printf("%i  ",arreglo[i]);
 }
 void llenarArreglo(int *elementos){
 
@@ -63,7 +62,7 @@ int main(void)
 
     llenarArreglo(&elementos);
 
-    printf("\nArreglo sin Cuadrado");
+    printf("\n\nArreglo sin Cuadrado\n\n");
 
     imprimirArreglo(&elementos);
 
@@ -88,7 +87,7 @@ int main(void)
     pthread_join(hilo1, NULL);
     pthread_join(hilo2, NULL);
 
-    printf("\nArreglo al Cuadrado");
+    printf("\n\nArreglo al Cuadrado\n\n");
 
     imprimirArreglo(&elementos);
 
