@@ -24,6 +24,13 @@ void llenarArreglo(int *elementos){
     }
 }
 
+void imprimirArreglo(int *elementos){
+
+     for(int i = 0; i < *elementos; i++){
+        printf("\n%i",arreglo[i]);
+    }
+}
+
 void *arregloCuadrado(void *arg)
 {
 }
@@ -47,7 +54,10 @@ int main(void)
         return -1;
     }
 
-    void imprimirArreglo();
+    printf("\nArreglo sin Cuadrado");
+    
+    void imprimirArreglo(&elementos);
+
     posiciones[0].inicio = 0;
 
     if (elementos % 2 == 0)
