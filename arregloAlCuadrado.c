@@ -9,12 +9,12 @@ struct arregloAlCuadrado
    int final;
 };
 
-bool memoriaDinamicaArreglo(int *elementos, struct arregloAlCuadrado *array)
+bool memoriaDinamicaArreglo(int *elementos, int *arreglo)
 {
 
-    array->arreglo = (int *)malloc(*elementos * sizeof(int));
+    *arreglo = (int *)malloc(*elementos * sizeof(int));
 
-    return array->arreglo == NULL;
+    return *arreglo == NULL;
 }
 
 void *arregloCuadrado(void *arg)
@@ -33,14 +33,14 @@ int main(void)
 {
 
     pthread_t hilo1, hilo2;
-    int elementos;
+    int elementos, arreglo;
 
-    struct arregloAlCuadrado posiciones;
+    struct arregloAlCuadrado posiciones[2];
 
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i", &elementos);
 
-    if (memoriaDinamicaArreglo(&elementos, &array) == NULL)
+    if (memoriaDinamicaArreglo(&elementos, &arreglo) == NULL)
     {
         perror("Error al asignar memoria en el arreglo");
         return -1;
