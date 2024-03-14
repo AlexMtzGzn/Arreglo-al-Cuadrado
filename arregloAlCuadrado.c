@@ -9,7 +9,7 @@ struct arregloAlCuadrado
    int final;
 };
 
-bool memoriaDinamicaArreglo(int *elementos, int *arreglo)
+int * memoriaDinamicaArreglo(int *elementos, int *arreglo)
 {
 
     *arreglo = (int *)malloc(*elementos * sizeof(int));
