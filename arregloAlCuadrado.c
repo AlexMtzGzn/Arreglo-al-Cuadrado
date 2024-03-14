@@ -5,11 +5,11 @@
 
 struct arregloAlCuadrado
 {
-   int inicio;
-   int final;
+    int inicio;
+    int final;
 };
 
-int * memoriaDinamicaArreglo(int *elementos, int *arreglo)
+int *memoriaDinamicaArreglo(int *elementos, int *arreglo)
 {
 
     arreglo = (int *)malloc(*elementos * sizeof(int));
@@ -19,7 +19,6 @@ int * memoriaDinamicaArreglo(int *elementos, int *arreglo)
 
 void *arregloCuadrado(void *arg)
 {
-   
 }
 
 int main(void)
@@ -39,17 +38,16 @@ int main(void)
         return -1;
     }
 
-    array.inicio_hilo_1=0;
+    posiciones[0].inicio = 0;
 
     if (elementos % 2 == 0)
     {
 
-        array.final_hilo_1 = array.inicio_hilo_2 = elementos / 2;
+        posiciones[0].final = posiciones[1].inicio = elementos / 2;
+        posiciones[1].final = elementos;
     }
     else
     {
-        array.par = array.impar = elementos / 2;
-        array.impar++;
     }
 
     pthread_create(&hilo1, NULL, arregloCuadrado, (void *)&array);
