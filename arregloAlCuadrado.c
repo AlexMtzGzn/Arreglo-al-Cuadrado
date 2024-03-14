@@ -65,7 +65,7 @@ int main(void)
 
     printf("\nArreglo sin Cuadrado");
 
-    void imprimirArreglo(elementos);
+    imprimirArreglo(&elementos);
 
     posiciones[0].inicio = 0;
 
