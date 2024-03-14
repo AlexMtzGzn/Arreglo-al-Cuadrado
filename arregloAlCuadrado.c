@@ -31,7 +31,7 @@ int main(void){
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i",&elementos);
 
-   if(array.arreglo = memoriaDinamicaArreglo(&elementos,&array) == NULL){
+   if(memoriaDinamicaArreglo(&elementos,&array) == NULL){
         perror("Error al asignar memoria en el arreglo");
         return -1;
     }
