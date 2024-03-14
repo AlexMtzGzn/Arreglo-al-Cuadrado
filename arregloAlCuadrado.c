@@ -5,6 +5,9 @@
 
 int * memoriaDinamicaArreglo(int *elementos){
 
+    int arreglo = (int *) malloc(*elementos*sizeof(int));
+
+    return arreglo;
 }
 
 int main(void){
