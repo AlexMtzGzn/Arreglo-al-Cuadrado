@@ -8,48 +8,66 @@ struct arregloAlCuadrado
     int *arreglo;
     int par;
     int impar;
-    
+    int inicioPar;
+    int inicioImpar;
 };
 
+bool memoriaDinamicaArreglo(int *elementos, struct arregloAlCuadrado *array)
+{
 
-bool memoriaDinamicaArreglo(int *elementos,struct arregloAlCuadrado *array){
+    array->arreglo = (int *)malloc(*elementos * sizeof(int));
 
-    array->arreglo = (int *) malloc(*elementos*sizeof(int));
-    
-    return array->arreglo==NULL;
+    return array->arreglo == NULL;
 }
 
-void * arregloCuadrado(void *arg){
+void *arregloCuadrado(void *arg)
+{
+    struct arregloAlCuadrado *array = (void *)arg;
 
+    if (array->par == array->impar)
+    {
+    }
+    else
+    {
+    }
 }
 
-int main(void){
+int main(void)
+{
 
-    pthread_t hilo1,hilo2;
+    pthread_t hilo1, hilo2;
     int elementos;
 
     struct arregloAlCuadrado array;
 
     printf("\nIngresa la cantidad de elementos del arreglo: ");
-    scanf("%i",&elementos);
+    scanf("%i", &elementos);
 
-   if(memoriaDinamicaArreglo(&elementos,&array) == NULL){
+    if (memoriaDinamicaArreglo(&elementos, &array) == NULL)
+    {
         perror("Error al asignar memoria en el arreglo");
         return -1;
     }
 
-    if(elementos % 2 == 0)
-        array.par=elementos/2;
-    else{
-        array.par=array.impar=elementos/2;
+    array.inicioPar=0;
+
+    if (elementos % 2 == 0)
+    {
+
+        array.par = elementos / 2;
+        array.inicioImpar = ;
+    }
+    else
+    {
+        array.par = array.impar = elementos / 2;
         array.impar++;
     }
 
-    pthread_create(&hilo1,NULL,arregloCuadrado,(void *)&array);
-    pthread_create(&hilo2,NULL,arregloCuadrado,(void *)&array);
-   
+    pthread_create(&hilo1, NULL, arregloCuadrado, (void *)&array);
+    pthread_create(&hilo2, NULL, arregloCuadrado, (void *)&array);
 
-
+    pthread_join(&hilo1, NULL);
+    pthread_join(&hilo2, NULL);
 
     return 0;
 }
