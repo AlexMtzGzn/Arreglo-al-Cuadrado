@@ -9,12 +9,19 @@ struct arregloAlCuadrado
     int final;
 };
 
-int arreglo;
+int *arreglo;
 
 void memoriaDinamicaArreglo(int *elementos)
 {
 
     arreglo = (int *)malloc(*elementos * sizeof(int));
+}
+
+void llenarArreglo(int *elementos){
+
+    for(int i = 0; i < *elementos; i++){
+        arreglo[i] = i;
+    }
 }
 
 void *arregloCuadrado(void *arg)
@@ -40,6 +47,7 @@ int main(void)
         return -1;
     }
 
+    void imprimirArreglo();
     posiciones[0].inicio = 0;
 
     if (elementos % 2 == 0)
