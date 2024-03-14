@@ -88,5 +88,9 @@ int main(void)
     pthread_join(&hilo1, NULL);
     pthread_join(&hilo2, NULL);
 
+    printf("\nArreglo al Cuadrado");
+
+    imprimirArreglo(&elementos);
+
     return 0;
 }
