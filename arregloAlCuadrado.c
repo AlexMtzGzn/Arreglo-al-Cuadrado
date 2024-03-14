@@ -18,8 +18,14 @@ int main(void){
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i",&elementos);
 
+    if(arreglo = memoriaDinamicaArreglo(&elementos) == NULL){
+        perror("Error al asignar memoria en el arreglo");
+        return -1;
+    }
 
-    arreglo = memoriaDinamicaArreglo(&elementos);
+    
+    
+   
 
 
 
