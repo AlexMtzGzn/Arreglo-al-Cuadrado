@@ -9,11 +9,11 @@ struct arregloAlCuadrado
 };
 
 
-int * memoriaDinamicaArreglo(int *elementos){
+void memoriaDinamicaArreglo(int *elementos,struct arregloAlCuadrado *array){
 
-    int arreglo = (int *) malloc(*elementos*sizeof(int));
+    array->arreglo = (int *) malloc(*elementos*sizeof(int));
 
-    return arreglo;
+ 
 }
 
 void * arregloCuadro(void *arg){
@@ -23,7 +23,9 @@ void * arregloCuadro(void *arg){
 int main(void){
 
     pthread_t hilo1,hilo2;
-    int elementos; 
+    int elementos;
+
+    struct arregloAlCuadrado array;
 
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i",&elementos);
