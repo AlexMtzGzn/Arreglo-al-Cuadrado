@@ -45,12 +45,8 @@ El programa solicita al usuario que ingrese la cantidad de elementos para el arr
 
 ## Contribuir
 
-Si quieres contribuir al proyecto, puedes hacer lo siguiente:
-
-- Reportar errores o problemas.
-- Proponer nuevas características o mejoras.
-- Enviar pull requests con cambios propuestos.
+Las contribuciones son bienvenidas y apreciadas. Si encuentras errores, tienes sugerencias de mejoras o quieres agregar nuevas características, por favor, siéntete libre de abrir un issue o enviar un pull request. Tu contribución ayudará a mejorar este proyecto para todos.
 
 ## Licencia
 
-Este proyecto está bajo la [Licencia MIT](LICENSE).
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
