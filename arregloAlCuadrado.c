@@ -97,7 +97,7 @@ int main(void)
     }
 
     if(pthread_join(hilo2, NULL) != 0){
-        perror("\nError al crear el hilo.");
+        perror("\nError al esperar el hilo.");
         return -1;
     }
 
