@@ -3,14 +3,22 @@
 #include <pthread.h>
 
 
+int * memoriaDinamicaArreglo(int *elementos){
+
+}
 
 int main(void){
 
     pthread_t hilo1,hilo2;
-    int elementos; 
+    int elementos, *arreglo; 
 
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i",&elementos);
+
+
+    arreglo = memoriaDinamicaArreglo(&elementos);
+
+
 
     return 0;
 }
