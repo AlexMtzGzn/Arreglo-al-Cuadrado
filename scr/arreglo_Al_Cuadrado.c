@@ -9,21 +9,21 @@ struct arregloAlCuadrado
     int final;
 };
 
-void memoriaDinamicaArreglo(int *elementos, int *arreglo)
+void memoriaDinamicaArreglo(int *elementos, int **arreglo)
 {
-    arreglo = (int *)malloc(*elementos * sizeof(int));
+    *arreglo = (int *)malloc(*elementos * sizeof(int));
 }
 
-void imprimirArreglo(int *elementos,int *arreglo){
+void imprimirArreglo(int *elementos,int **arreglo){
 
      for(int i = 0; i < *elementos; i++)
-        printf("%i  ",arreglo[i]);
+        printf("%i  ",*arreglo[i]);
 }
 
-void llenarArreglo(int *elementos,int *arreglo){
+void llenarArreglo(int *elementos,int **arreglo){
 
     for(int i = 0; i < *elementos; i++)
-        arreglo[i] = i+1;
+        *arreglo[i] = i+1;
 }
 
 void *arregloCuadrado(void *arg)
@@ -47,7 +47,7 @@ int main(void)
     printf("\nIngresa la cantidad de elementos del arreglo: ");
     scanf("%i", &elementos);
 
-    memoriaDinamicaArreglo(&elementos,&*arreglo);
+    memoriaDinamicaArreglo(&elementos,&arreglo);
 
     if (arreglo == NULL)
     {
@@ -56,11 +56,11 @@ int main(void)
     }
 
 
-    llenarArreglo(&elementos,&*arreglo);
+    llenarArreglo(&elementos,&arreglo);
 
     printf("\n\nArreglo sin Cuadrado\n\n");
 
-    imprimirArreglo(&elementos,&*arreglo);
+    imprimirArreglo(&elementos,&arreglo);
 
     posiciones->arreglo=arreglo;
 
@@ -101,7 +101,7 @@ int main(void)
 
     printf("\n\nArreglo al Cuadrado\n\n");
 
-    imprimirArreglo(&elementos,&*arreglo);
+    imprimirArreglo(&elementos,&arreglo);
 
     free(arreglo);
 
